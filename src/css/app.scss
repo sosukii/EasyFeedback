@@ -1,0 +1,15 @@
+// app global css in SCSS form
+* {
+  font-family: system, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Segoe WP',
+    Roboto, Ubuntu, Oxygen, Cantarell, 'Fira Sans', 'Helvetica Neue', Helvetica,
+    'Lucida Grande', 'Droid Sans', Tahoma, 'Microsoft Sans Serif', sans-serif;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1576px;
+  margin: 0 auto;
+  padding: 0 10px;
+  // overflow: hidden;
+}
