@@ -16,7 +16,7 @@
           <q-icon class="logo__icon" name="grass" />
           <q-toolbar-title class="logo__title">EasyFeedback</q-toolbar-title>
         </q-btn>
-        <Navbar />
+        <Navbar hideWhenTablet="true" />
         <div>
           <q-btn color="primary" icon="face" class="gt-sm">
             <q-menu transition-show="flip-right" transition-hide="flip-left">

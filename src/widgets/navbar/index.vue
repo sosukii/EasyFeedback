@@ -1,5 +1,5 @@
 <template>
-  <nav class="navigation">
+  <nav class="navigation" :class="{ 'gt-sm': hideWhenTablet }">
     <q-btn class="navigation__link" to="/" label="Главная" flat />
     <q-btn class="navigation__link" to="/about" label="О сервисе" flat />
     <q-btn class="navigation__link" to="/feedbacks" label="Отзывы" flat />
@@ -7,8 +7,11 @@
 </template>
 
 <script lang="ts" setup>
-import { defineComponent } from 'vue';
+import { defineComponent, defineProps } from 'vue';
 
+defineProps({
+  hideWhenTablet: Boolean,
+});
 defineComponent({
   name: 'NavbarComponent',
 });
