@@ -16,7 +16,7 @@
           <q-icon class="logo__icon" name="grass" />
           <q-toolbar-title class="logo__title">EasyFeedback</q-toolbar-title>
         </q-btn>
-        <Navbar hideWhenTablet="true" />
+        <Navbar :hideWhenTablet="true" :isFlat="true" />
         <div>
           <q-btn color="primary" icon="face" class="gt-sm">
             <q-menu transition-show="flip-right" transition-hide="flip-left">
@@ -46,12 +46,14 @@
   <q-drawer v-model="sidebarOpen" bordered>
     <q-btn icon="close" class="float-right" flat @click="toggleSidebar" />
     <div class="sidebar">
-      <q-btn to="/feedbacks">Отзывы</q-btn>
+      <Navbar :isColumn="true" />
       <q-separator />
-      <q-btn v-if="!isUserAuthenticated" @click="toggleLoginCard">Войти</q-btn>
-      <q-btn v-if="isUserAuthenticated" to="/profile">Профиль</q-btn>
+      <q-btn v-if="!isUserAuthenticated" @click="toggleLoginCard" no-caps
+        >Войти</q-btn
+      >
+      <q-btn v-if="isUserAuthenticated" to="/profile" no-caps>Профиль</q-btn>
       <q-separator />
-      <q-btn v-if="isUserAuthenticated" @click="logout">Выйти</q-btn>
+      <q-btn v-if="isUserAuthenticated" @click="logout" no-caps>Выйти</q-btn>
     </div>
   </q-drawer>
   <q-dialog v-model="card">
@@ -127,6 +129,9 @@ defineComponent({
   flex-direction: column;
   gap: 12px;
   padding: 24px 12px;
+  &:first-child {
+    background-color: red;
+  }
 }
 .sidebar > * {
   text-transform: capitalize;

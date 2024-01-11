@@ -5,7 +5,7 @@
         <q-toolbar-title
           ><a class="toolbar__title" href="/">EasyFeedback</a></q-toolbar-title
         >
-        <Navbar />
+        <Navbar :isFlat="true" />
         <div class="toolbar__content">
           <div class="copyright">
             © 2024 EasyFeedback by

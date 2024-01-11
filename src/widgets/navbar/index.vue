@@ -1,8 +1,29 @@
 <template>
-  <nav class="navigation" :class="{ 'gt-sm': hideWhenTablet }">
-    <q-btn class="navigation__link" to="/" label="Главная" flat />
-    <q-btn class="navigation__link" to="/about" label="О сервисе" flat />
-    <q-btn class="navigation__link" to="/feedbacks" label="Отзывы" flat />
+  <nav
+    class="navigation"
+    :class="{ 'gt-sm': hideWhenTablet, column: isColumn }"
+  >
+    <q-btn
+      class="navigation__link"
+      no-caps
+      to="/"
+      label="Главная"
+      :flat="!!isFlat"
+    />
+    <q-btn
+      class="navigation__link"
+      no-caps
+      to="/about"
+      label="О сервисе"
+      :flat="!!isFlat"
+    />
+    <q-btn
+      class="navigation__link"
+      no-caps
+      to="/feedbacks"
+      label="Отзывы"
+      :flat="!!isFlat"
+    />
   </nav>
 </template>
 
@@ -11,6 +32,8 @@ import { defineComponent, defineProps } from 'vue';
 
 defineProps({
   hideWhenTablet: Boolean,
+  isFlat: Boolean,
+  isColumn: Boolean,
 });
 defineComponent({
   name: 'NavbarComponent',
@@ -22,10 +45,9 @@ defineComponent({
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 10px;
   gap: 10px;
-  &__link {
-    color: white;
-  }
+}
+.column {
+  flex-direction: column;
 }
 </style>
