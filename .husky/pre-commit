@@ -4,3 +4,4 @@
 npx lint-staged --relative
 npx lint-staged --relative
 npx lint-staged --relative
+npx lint-staged --relative

@@ -19,6 +19,7 @@
     "@quasar/extras": "^1.16.4",
     "axios": "^1.2.1",
     "gh-pages": "^6.0.0",
+    "lottie-web-vue": "^2.0.7",
     "pinia": "^2.0.11",
     "quasar": "^2.6.0",
     "vue": "^3.0.0",

@@ -4,7 +4,7 @@
       <div class="content">
         <div class="sections">
           <div outlined class="sections__section sections__section-mock">
-            <q-btn @click='goToFeedback'>Моковые данные</q-btn>
+            <q-btn @click="goToFeedback">Моковые данные</q-btn>
             <div class="text-h4">
               Ознакомьтесь с функционалом с помощью тестовых отзывов
             </div>
@@ -80,7 +80,6 @@
 </template>
 
 <script lang="ts" setup>
-
 import {
   getFeedbacks,
   FeedbacksData,
@@ -91,7 +90,7 @@ import { defineComponent, ref, Ref, computed } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-const apiTokensStore = useAPITokensStore()
+const apiTokensStore = useAPITokensStore();
 
 const token = ref('');
 type Nullable<T> = T | null;
@@ -107,8 +106,8 @@ async function checkToken(): Promise<void> {
   const response: FeedbacksData | FeedbacksError = await getFeedbacks(options);
 
   if ('data' in response) {
-    apiTokensStore.setfeedbackREAD(token.value)
-    goToFeedback()
+    apiTokensStore.setfeedbackREAD(token.value);
+    goToFeedback();
   }
 }
 
@@ -133,7 +132,7 @@ defineComponent({
   display: flex;
 
   flex-wrap: wrap;
-  margin: 0 auto;
+  justify-content: center;
   padding-top: 25px;
   gap: 10px;
   &__section {
