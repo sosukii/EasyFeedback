@@ -5,23 +5,8 @@
         <q-toolbar-title
           ><a class="toolbar__title" href="/">EasyFeedback</a></q-toolbar-title
         >
-
+        <Navbar />
         <div class="toolbar__content">
-          <nav class="navigation">
-            <q-btn class="navigation__link" to="/" label="Главная" flat />
-            <q-btn
-              class="navigation__link"
-              to="/about"
-              label="О сервисе"
-              flat
-            />
-            <q-btn
-              class="navigation__link"
-              to="/feedbacks"
-              label="Отзывы"
-              flat
-            />
-          </nav>
           <div class="copyright">
             © 2024 EasyFeedback by
             <a class="tg" href="https://t.me/sosukii" target="_blank"
@@ -36,6 +21,7 @@
 
 <script lang="ts" setup>
 import { defineComponent } from 'vue';
+import Navbar from 'src/widgets/navbar';
 
 defineComponent({
   name: 'FooterComponent',

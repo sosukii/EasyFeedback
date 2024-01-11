@@ -13,10 +13,10 @@
         />
 
         <q-btn to="/" flat class="logo gt-xs">
-          <q-icon class="logo__icon" name='grass'/>
+          <q-icon class="logo__icon" name="grass" />
           <q-toolbar-title class="logo__title">EasyFeedback</q-toolbar-title>
         </q-btn>
-
+        <Navbar />
         <div>
           <q-btn color="primary" icon="face" class="gt-sm">
             <q-menu transition-show="flip-right" transition-hide="flip-left">
@@ -65,6 +65,7 @@ import { useRouter } from 'vue-router';
 import { useUserStore } from 'src/stores/user';
 import { authToken } from 'src/shared/api/auth';
 import LoginCard from 'src/features/login-card/index';
+import Navbar from 'src/widgets/navbar';
 
 const card = ref(false);
 const sidebarOpen = ref(false);

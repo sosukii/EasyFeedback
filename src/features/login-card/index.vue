@@ -10,19 +10,19 @@
     </q-card-section>
 
     <q-card-section>
-      <InputName @update:name="handleData" v-if="reg" />
-      <InputEmail @update:email="handleData" />
-      <InputPassword @update:password="handleData" />
+      <q-form @submit="handleAuth">
+        <InputName @update:name="handleData" v-if="reg" />
+        <InputEmail @update:email="handleData" />
+        <InputPassword @update:password="handleData" />
+        <q-card-actions align="center">
+          <q-btn
+            class="text-capitalize"
+            type="submit"
+            :label="reg ? 'Зарегистрироваться' : 'Войти'"
+          />
+        </q-card-actions>
+      </q-form>
     </q-card-section>
-
-    <q-card-actions align="center">
-      <q-btn
-        v-close-popup
-        class="text-capitalize"
-        @click="handleAuth"
-        :label="reg ? 'Зарегистрироваться' : 'Войти'"
-      />
-    </q-card-actions>
   </q-card>
 </template>
 
@@ -50,13 +50,12 @@ function handleData(inputData: objInput): void {
 }
 async function handleAuth(): Promise<void> {
   const result = reg.value ? await register(userData) : await login(userData);
- if ('token' in result) {
-  router.push('/profile');
- }
+  if ('token' in result) {
+    router.push('/profile');
+  }
 }
 
 defineComponent({
   name: 'AuthForm',
 });
 </script>
-
