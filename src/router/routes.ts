@@ -7,6 +7,7 @@ export const ROUTES_NAMES = {
   FEEDBACKS: 'feedbacks',
   PROFILE: 'profile',
   NOT_FOUND: 'not-found',
+  ABOUT: 'about',
 } as const;
 
 const routes: RouteRecordRaw[] = [
@@ -27,6 +28,12 @@ const routes: RouteRecordRaw[] = [
     path: '/feedbacks',
     meta: { title: 'EasyFeedback - feedbacks' },
     component: () => import('src/pages/feedbacks'),
+  },
+  {
+    name: ROUTES_NAMES.ABOUT,
+    path: '/about',
+    meta: { title: 'EasyFeedback - about' },
+    component: () => import('src/pages/about'),
   },
 
   // Always leave this as last one,
