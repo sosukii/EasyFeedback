@@ -1,80 +1,74 @@
 <template>
   <q-page>
     <div class="container">
-      <div class="content">
-        <div class="sections">
-          <div outlined class="sections__section sections__section-mock">
-            <q-btn @click="goToFeedback">Моковые данные</q-btn>
-            <div class="text-h4">
-              Ознакомьтесь с функционалом с помощью тестовых отзывов
-            </div>
+      <div class="sections">
+        <div outlined class="sections__section sections__section-mock">
+          <q-btn @click="goToFeedback" class="btn">Моковые данные</q-btn>
+          <div class="description text-h5">
+            Ознакомьтесь с функционалом с помощью тестовых отзывов
           </div>
-          <div class="sections__section sections__section-api">
-            <q-btn @click="focus">У меня есть токен</q-btn>
-            <div class="text-h4">Читайте и отвечайте на отзывы</div>
-            <div class="sending">
-              <q-input
-                outlined
-                v-model="token"
-                label="Токен для чтения отзывов"
-                ref="tokenInput"
-                class="sending__input"
-              />
-              <q-icon
-                class="sending__icon"
-                :class="{ 'sending__icon-disabled': !isSendIconDisabled }"
-                name="send"
-                @click="checkToken"
+        </div>
+        <div class="sections__section sections__section-api">
+          <q-btn @click="focus" class="btn">У меня есть токен</q-btn>
+          <div class="description text-h5">Читайте и отвечайте на отзывы</div>
+          <div class="sending">
+            <q-input
+              outlined
+              v-model="token"
+              label="Токен для чтения отзывов"
+              ref="tokenInput"
+              class="sending__input"
+            />
+            <q-icon
+              class="sending__icon"
+              :class="{ 'sending__icon-disabled': !isSendIconDisabled }"
+              name="send"
+              @click="checkToken"
+            >
+              <q-tooltip transition-show="scale" transition-hide="scale">
+                Отправить
+              </q-tooltip>
+            </q-icon>
+          </div>
+          <div class="accordion">
+            <q-list bordered>
+              <q-expansion-item
+                group="somegroup"
+                icon="help_outline"
+                label="Что такое токен?"
+                header-class="text-teal"
               >
-                <q-tooltip transition-show="scale" transition-hide="scale">
-                  Отправить
-                </q-tooltip>
-              </q-icon>
-            </div>
-            <div style="max-width: 450px">
-              <q-list bordered>
-                <q-expansion-item
-                  group="somegroup"
-                  icon="help_outline"
-                  label="Что такое токен?"
-                  header-class="text-teal"
-                >
-                  <q-card>
-                    <q-card-section>
-                      Уникальный набор символов. С помощью него можно
-                      идентифицировать себя для системы.
-                    </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-                <q-expansion-item
-                  group="somegroup"
-                  icon="explore"
-                  label="Где найти нужный токен?"
-                  header-class="text-primary"
-                >
-                  <q-card>
-                    <q-card-section>
-                      <q-btn
-                        class="btn"
-                        href="https://seller.wildberries.ru/supplier-settings/access-to-api"
-                        target="_blank"
-                        icon="arrow_outward"
-                        label="Профиль --> Настройки --> Доступ к API"
-                        color="purple"
-                        no-caps
-                      />
-                    </q-card-section>
-                  </q-card>
-                </q-expansion-item>
-              </q-list>
-            </div>
+                <q-card>
+                  <q-card-section>
+                    Уникальный набор символов. С помощью него можно
+                    идентифицировать себя для системы.
+                  </q-card-section>
+                </q-card>
+              </q-expansion-item>
+              <q-expansion-item
+                group="somegroup"
+                icon="explore"
+                label="Где найти нужный токен?"
+                header-class="text-primary"
+              >
+                <q-card>
+                  <q-card-section>
+                    <q-btn
+                      class="btn"
+                      href="https://seller.wildberries.ru/supplier-settings/access-to-api"
+                      target="_blank"
+                      icon="arrow_outward"
+                      label="Профиль --> Настройки --> Доступ к API"
+                      color="purple"
+                      no-caps
+                    />
+                  </q-card-section>
+                </q-card>
+              </q-expansion-item>
+            </q-list>
           </div>
         </div>
       </div>
-
-      <!-- <div class="links">
-        <q-btn to="/feedbacks" label="Отзывы" text-color="black" flat />
-      </div> -->
     </div>
   </q-page>
 </template>
@@ -124,27 +118,33 @@ defineComponent({
   flex-direction: column;
   align-items: flex-start;
 }
-.content {
-  display: flex;
-  flex-direction: column;
-}
 .sections {
   display: flex;
-
   flex-wrap: wrap;
   justify-content: center;
   padding-top: 25px;
   gap: 10px;
   &__section {
+    flex-grow: 1;
     max-width: 450px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 10px;
     gap: 10px;
+    .btn {
+      width: 100%;
+    }
+    .description {
+      text-align: center;
+      min-height: 60px;
+    }
   }
   .sending {
     display: flex;
     gap: 10px;
+    width: 100%;
+    align-items: end;
     &__input {
       width: 100%;
     }
@@ -168,8 +168,7 @@ defineComponent({
     }
   }
   .accordion {
-    display: flex;
-    justify-content: end;
+    width: 100%;
   }
 }
 </style>
