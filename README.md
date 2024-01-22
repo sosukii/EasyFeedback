@@ -3,7 +3,9 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ceb04fd6-377a-4557-ada2-b480e3863d75/deploy-status)](https://app.netlify.com/sites/easyfeedbackwb/deploys)
 
 🖐🏼 Made with love and tools:
+
 ![vue](https://img.shields.io/badge/Vue%20js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D) ![vue](https://img.shields.io/badge/pinia-35495E?style=for-the-badge) ![typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+
 ![eslint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white) ![prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)
 
 ![easy](./easy.gif)
@@ -11,6 +13,7 @@
 ## About
 
 Wildberries - 😉 Read feedbacks; ✍🏼 Send answers;
+
 A service use your token for read unanswered feedbacks from your wildberries store and give you ability to write and send answer for users feedbacks.
 
 You can use this service :key: **with token** or :heavy_check_mark: **without it** (using test feedbacks for checking how it works).
