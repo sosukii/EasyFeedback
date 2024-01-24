@@ -45,7 +45,7 @@ export const mockData: Feedback[] = [
   {
     id: 'sdfT44wBZT76w4ro2vf4',
     text: 'Отказ, маломерит на размер. Заказывать другой не собираюсь, не та размерная сетка у продавца? смотрите внимательней',
-    productValuation: 4,
+    productValuation: 2,
     createdDate: '2024-01-07T10:23:27Z',
     answer: null,
     state: 'none',
@@ -66,7 +66,7 @@ export const mockData: Feedback[] = [
   {
     id: 'vf2O44wV9HYuAcv3OVL3',
     text: 'Всё нормально, цвет как на фото, рукава по длине не короткие, по ростовке тоже норм, не дали пакет ???',
-    productValuation: 4,
+    productValuation: 3,
     createdDate: '2024-01-07T10:39:27Z',
     answer: null,
     state: 'none',
