@@ -20,7 +20,7 @@ pipeline {
 
     stage('STAGE 3: Build') {
       steps {
-        sh 'quasar build'
+        sh 'npm run build'
       }
     }
 
