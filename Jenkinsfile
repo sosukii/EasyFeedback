@@ -20,7 +20,11 @@ pipeline {
 
     stage('STAGE 3: Build') {
       steps {
-        sh 'npm run build'
+        echo 'start timeout 5 min'
+        timeout(time: 5, unit: 'MINUTES') {
+          sh 'npm run build'
+        }
+        echo 'end timeout 5 min'
       }
     }
 
