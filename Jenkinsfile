@@ -14,20 +14,20 @@ pipeline {
 
     stage('STAGE 2: Install deps') {
       steps {
-        sh 'npm ci'
+        bat 'npm install'
       }
     }
 
     stage('STAGE 3: Build') {
       steps {
-        sh 'npm run build'
+        bat 'quasar build'
       }
     }
 
     stage('STAGE 4: Deploy to server') {
       steps {
-        sh 'rm -rf $DEPLOY_DIR/*'
-        sh 'cp -r dist/* $DEPLOY_DIR'
+        bat 'rm -rf $DEPLOY_DIR/*'
+        bat 'cp -r dist/* $DEPLOY_DIR'
       }
     }
   }
